@@ -41,6 +41,46 @@
       position:fixed;right:20px;bottom:20px;background:var(--green);color:#fff;
       padding:12px 18px;border-radius:50px;font-weight:800;box-shadow:0 4px 6px rgba(0,0,0,.18);
     }
+    /* --- Stile app moderno GoBee --- */
+:root{
+  --brand:#ffd24c;
+  --brand-dark:#ffb800;
+  --ink:#111;
+  --ink-soft:#555;
+}
+
+html{scroll-behavior:smooth;}
+body{background:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);}
+
+/* Header tipo app mobile */
+header{
+  position:sticky;top:0;z-index:999;background:#fff;
+  box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+/* Hero */
+.hero{
+  background:linear-gradient(135deg,var(--brand) 0%,var(--brand-dark) 100%);
+  color:#111;text-align:left;border-bottom:1px solid #eee;
+}
+.hero h1{margin:0 0 12px 0;line-height:1.1;}
+.hero p{font-size:18px;margin:0 0 16px 0;}
+
+/* Pulsanti */
+.btn{border-radius:12px;padding:14px 20px;font-weight:700;transition:all .2s ease;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15);}
+.btn.outline:hover{background:var(--brand);color:#000;}
+
+/* Sezioni */
+section{padding:56px 0;}
+.container.card{
+  background:#fff;border-radius:18px;padding:24px;
+  box-shadow:0 8px 26px rgba(0,0,0,.06);
+  margin-bottom:28px;
+}
+
+/* Footer */
+footer{background:#f9f9f9;font-size:14px;color:#555;text-align:center;padding:24px 0;}
   </style>
 </head>
 <body>
@@ -281,6 +321,7 @@ Per consegne oltre questa distanza, offriamo preventivi personalizzati in base a
 
 </body>
 </html>
+
 
 
 

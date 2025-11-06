@@ -1,222 +1,189 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <!-- SEO base -->
-<title>GoBee – Consegne e commissioni rapide per aziende e privati a Vicenza</title>
-<meta name="description" content="GoBee offre consegne rapide entro 3–9 km, servizi a tempo e commissioni per aziende e privati. Prenotazione via WhatsApp. Vicenza e zone limitrofe.">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://gobeeofficial.github.io/gobee-site/">
-
-<!-- Open Graph / Social -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="GoBee – Consegne e commissioni rapide a Vicenza">
-<meta property="og:description" content="Consegne entro 3–9 km, servizi a tempo (fino a 90 min), farmacie, uffici. Prenota via WhatsApp.">
-<meta property="og:url" content="https://gobeeofficial.github.io/gobee-site/">
-<meta property="og:image" content="https://gobeeofficial.github.io/gobee-site/og-image.jpg"> <!-- (opzionale, la aggiungiamo dopo) -->
-
-<!-- Mobile -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Schema.org LocalBusiness -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "GoBee",
-  "description": "Consegne e commissioni rapide per aziende e privati.",
-  "url": "https://gobeeofficial.github.io/gobee-site/",
-  "areaServed": ["Vicenza", "Zona Ovest", "Zona Est", "Stanga", "San Pio X", "Ferrovieri", "Ponte Alto"],
-  "email": "gobeeitalia@gmail.com",
-  "serviceArea": {"@type":"Place","name":"Vicenza"},
-  "sameAs": [],
-  "openingHours": "Mo-Su 00:00-23:59",
-  "priceRange": "€",
-  "founder": "Sandro Moracchiato"
-}
-</script>
   <meta charset="utf-8">
+  <title>GoBee - Consegne e commissioni rapide per aziende e privati</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GoBee – Consegne e commissioni </title>
-  <meta name="description" content="GoBee: consegne e commissioni rapide per aziende e privati. Il servizio che vola.">
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- SEO base -->
+  <meta name="description" content="GoBee offre consegne rapide entro 3-9 km, servizi a tempo (fino a 90 min) e commissioni per aziende e privati. Prenotazioni via WhatsApp.">
+  <link rel="canonical" href="https://gobeeofficial.github.io/gobee-site/">
+
+  <style>
+    /* ====== STYLES MINIMI, TUTTO IN-LINE PER EVITARE ERRORI ====== */
+    :root{
+      --yellow:#ffd24c; --black:#111; --text:#333; --green:#25D366;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:#fff}
+    a{color:#0066cc;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1050px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #eee}
+    .top{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--black)}
+    .logo-mark{display:inline-block;width:24px;height:24px;background:var(--yellow);border-radius:6px}
+    nav a{margin-left:18px;color:var(--black);font-weight:600}
+    .hero{background:var(--yellow);padding:48px 0}
+    .hero h1{margin:0 0 8px 0;color:var(--black);font-size:32px;line-height:1.2}
+    .hero p{margin:0 0 20px 0}
+    .btn{display:inline-block;background:var(--black);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700}
+    .btn.outline{background:#fff;color:var(--black);border:2px solid var(--black)}
+    section{padding:48px 0;border-bottom:1px solid #f1f1f1}
+    h2{margin:0 0 16px 0;color:var(--black)}
+    ul.feature{margin:0;padding-left:18px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+    @media (max-width:800px){.grid{grid-template-columns:1fr}}
+    footer{background:#f7f7f7;padding:24px 0;font-size:14px;color:#555}
+
+    /* Pulsante WA flottante */
+    .wa-fab{
+      position:fixed;right:20px;bottom:20px;background:var(--green);color:#fff;
+      padding:12px 18px;border-radius:50px;font-weight:800;box-shadow:0 4px 6px rgba(0,0,0,.18);
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <!-- Se in questa cartella aggiungi un file 'logo-gobee.png', comparirà qui automaticamente -->
-      <img src="logo-gobee.png" alt="GoBee logo" class="logo-img" onerror="this.style.display='none'">
-      <div class="logo">Go<span class="bee">Bee</span></div>
-      <div class="tagline">Il servizio che vola</div>
+
+<header>
+  <div class="container top">
+    <div class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span>GoBee</span>
+      <span style="font-weight:500;color:#666;margin-left:6px;">Il servizio che vola</span>
     </div>
-    <nav class="nav">
+    <nav aria-label="Principale">
       <a href="#come-funziona">Come funziona</a>
       <a href="#servizi">Servizi e prezzi</a>
       <a href="#area">Area di copertura</a>
       <a href="#rider">Diventa Rider</a>
-      <a href="#contatti" class="btn btn--outline">Contatti</a>
+      <a href="#contatti" class="btn outline">Contatti</a>
     </nav>
-    <button class="menu-toggle" aria-label="Apri menu">☰</button>
   </div>
 </header>
 
 <main>
   <!-- HERO -->
   <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <h1>Consegne e commissioni rapide a Vicenza</h1>
-        <p>Servizio locale per aziende e privati. Ritiri in posta o farmacia, documenti urgenti, pacchi tra uffici: ci pensiamo noi.</p>
-        <h1 style="font-size:2.2em; color:#000; margin-bottom:10px;">
-  GoBee – Consegne e commissioni rapide a Vicenza
-</h1>
-<p style="font-size:1.1em; color:#333; margin-bottom:30px;">
-  Servizi di consegna rapida entro 3–9 km per aziende e privati. Prenota subito tramite WhatsApp o chiedi un preventivo gratuito.
-</p>
-<div class="cta">
-  <a href="#contatti" style="background:#000; color:#fff; padding:12px 25px; border-radius:40px; text-decoration:none; font-weight:bold; margin-right:10px;">
-    📦 Chiedi un preventivo
-  </a>
-  <a href="https://wa.me/393298889083" target="_blank" style="background:#25D366; color:#fff; padding:12px 25px; border-radius:40px; text-decoration:none; font-weight:bold;">
-    💬 Scrivici su WhatsApp
-  </a>
-</div>
-          <!-- TODO: quando avrai il numero, sostituisci # con https://wa.me/39TUONUMERO -->
-          <a href="#contatti" class="btn btn--primary">WhatsApp in arrivo</a>
-          <a href="#servizi" class="btn btn--ghost">Vedi servizi e prezzi</a>
-        </div>
-        <ul class="pill-list">
-          <li>Risposta immediata</li>
-          <li>Tariffe chiare</li>
-          <li>Rider di fiducia 🐝</li>
-        </ul>
-      </div>
-      <div class="hero-illus">
-        <div class="scooter"></div>
+    <div class="container">
+      <h1>Consegne e commissioni rapide per aziende e privati</h1>
+      <p>Servizio locale, tracciabile e su misura. Prenota via WhatsApp in pochi secondi.</p>
+      <div>
+        <a class="btn" href="https://wa.me/393298889083?text=Ciao%20GoBee!%20Vorrei%20un%20preventivo%20per%20una%20consegna.">Scrivici su WhatsApp</a>
+        <a class="btn outline" href="#servizi" style="margin-left:10px;">Vedi prezzi</a>
       </div>
     </div>
   </section>
 
   <!-- COME FUNZIONA -->
-  <section id="come-funziona" class="section">
-    <div class="container">
-      <h2>Come funziona</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Scrivici su WhatsApp</h3>
-          <p>Indica ritiro, consegna, orario e note. Ti rispondiamo con conferma e tempi.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Ritiro e tracciamento</h3>
-          <p>Un rider GoBee ritira il pacco e lo porta a destinazione. Cura e puntualità prima di tutto.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Consegna e ricevuta</h3>
-          <p>Ricevi conferma di consegna e, se vuoi, foto firma/ora. Paghi in contanti o con metodi digitali.</p>
-        </div>
+  <section id="come-funziona">
+    <div class="container grid">
+      <div>
+        <h2>Come funziona</h2>
+        <ul class="feature">
+          <li>Ci scrivi su WhatsApp con ritiro, destinazione e orario.</li>
+          <li>Ti diamo conferma e prezzo immediato.</li>
+          <li>Ritiro, consegna e conferma al termine.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Per cosa ci chiamano</h2>
+        <ul class="feature">
+          <li>Documenti, chiavi, pacchi leggeri.</li>
+          <li>Commissioni per aziende, uffici e farmacie.</li>
+          <li>Servizi a tempo (fino a 90 minuti).</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- SERVIZI E PREZZI -->
-  <section id="servizi" class="section alt">
+  <section id="servizi">
     <div class="container">
       <h2>Servizi e prezzi</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Consegne rapide</h3>
-          <ul class="list">
-            <li>Entro 3 km: <strong>10 €</strong></li>
-            <li>Fino a 6 km: <strong>14 €</strong></li>
-            <li>Fino a 9 km: <strong>18 €</strong></li>
-          </ul>
-          <p class="note">Extra chilometrici o richieste speciali su preventivo.</p>
-        </div>
-        <div class="card">
-          <h3>Servizi a tempo</h3>
-          <p>Attese in posta/uffici/farmacia fino a <strong>90 minuti</strong>.</p>
-          <p class="price">15 €</p>
-          <p class="note">Comprende ritiro + consegna entro città.</p>
-        </div>
-        <div class="card">
-          <h3>Per aziende</h3>
-          <p>Documenti tra sedi, forniture leggere, consegne programmabili.</p>
-          <p class="note">Fatturazione mensile disponibile.</p>
-        </div>
-      </div>
-      <div class="cta center">
-        <a href="#contatti" class="btn btn--primary">Chiedi un preventivo</a>
-      </div>
+      <ul class="feature">
+        <li>Consegna rapida (entro 3 km): <strong>10 €</strong></li>
+        <li>Fino a 6 km: <strong>14 €</strong> — Fino a 9 km: <strong>18 €</strong></li>
+        <li>Servizi a tempo (fino a 90 minuti): <strong>15 €</strong></li>
+        <li>Extra chilometrici o richieste speciali: <strong>su preventivo</strong></li>
+      </ul>
+      <p style="margin-top:12px;font-size:14px;color:#666">
+        Copertura iniziale: Vicenza e zone limitrofe. Prezzi IVA esclusa; fatturazione disponibile su richiesta.
+      </p>
     </div>
   </section>
 
-  <!-- AREA DI COPERTURA -->
-  <section id="area" class="section">
+  <!-- AREA DI COPERTURA (placeholder semplice, poi mettiamo mappa) -->
+  <section id="area">
     <div class="container">
       <h2>Area di copertura</h2>
-      <p>Vicenza e zone limitrofe: <strong>Zona Ovest, Zona Est, Stanga, San Pio X, Ferrovieri, Ponte Alto</strong>. Possibili estensioni su richiesta.</p>
-      <div class="badge">Mappa dettagliata in arrivo</div>
+      <p>Vicenza e zone limitrofe. Se hai dubbi sulla copertura, scrivici: rispondiamo al volo.</p>
     </div>
   </section>
 
   <!-- RIDER -->
-  <section id="rider" class="section alt">
-    <div class="container">
-      <h2>Diventa Rider</h2>
-      <p>Sei puntuale e affidabile? Con GoBee puoi lavorare in libertà e costruire la tua reputazione: i clienti potranno lasciarti recensioni e prenotarti in anticipo.</p>
-      <ul class="list">
-        <li>Guadagni equi per consegna</li>
-        <li>Orari liberi, zero vincoli</li>
-        <li>Ordini premium per i “Rider di fiducia”</li>
-      </ul>
-      <div class="cta">
-        <a href="#contatti" class="btn btn--outline">Candidati</a>
+  <section id="rider">
+    <div class="container grid">
+      <div>
+        <h2>Diventa Rider</h2>
+        <ul class="feature">
+          <li>Guadagni equi per consegna.</li>
+          <li>Orari liberi, zero vincoli.</li>
+          <li>Ordini premium per i “Rider di fiducia”.</li>
+        </ul>
+        <p>
+          <a class="btn outline" href="mailto:gobeeitalia@gmail.com?subject=Candidatura%20Rider">Candidati</a>
+        </p>
+      </div>
+      <div>
+        <h2>Perch&eacute; GoBee</h2>
+        <p>Servizio personalizzato, contatto diretto e recensioni dei clienti per i rider pi&ugrave; affidabili.</p>
       </div>
     </div>
   </section>
-  
-<h3 style="color:#000; margin:0 0 8px;">Contatti</h3>
 
-<p style="color:#333; font-size:16px; margin:8px 0;">
-  <strong>Telefono:</strong>
-  <a href="tel:‪+393298889083‬" style="color:#000;">‪+39 329 888 9083‬</a>
-</p>
+  <!-- CONTATTI -->
+  <section id="contatti">
+    <div class="container">
+      <h2>Contatti</h2>
 
-<p style="color:#333; font-size:16px; margin:8px 0;">
-  <strong>WhatsApp:</strong>
-  <a href="https://wa.me/393298889083" style="color:#000;">Scrivici su WhatsApp</a>
-</p>
+      <p style="margin:8px 0;">
+        <strong>Telefono:</strong>
+        <a href="tel:+393298889083" style="color:#000;">+39 329 888 9083</a>
+      </p>
 
-<p style="color:#333; font-size:16px; margin:8px 0;">
-  <strong>Email:</strong>
-  <a href="mailto:gobeeitalia@gmail.com" style="color:#000;">gobeeitalia@gmail.com</a>
-</p>
- 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>© <span id="year"></span> GoBee · Il servizio che vola</div>
-    <div class="mini">P.IVA (se presente) · Note legali in arrivo</div>
+      <p style="margin:8px 0;">
+        <strong>WhatsApp:</strong>
+        <a href="https://wa.me/393298889083?text=Ciao%20GoBee!%20Vorrei%20informazioni%20sui%20servizi."
+           style="color:#000;" aria-label="Scrivici su WhatsApp">Scrivici su WhatsApp</a>
+      </p>
+
+      <p style="margin:8px 0;">
+        <strong>Email:</strong>
+        <a href="mailto:gobeeitalia@gmail.com" style="color:#000;">gobeeitalia@gmail.com</a>
+      </p>
+
+      <p style="margin:16px 0 0 0;font-size:14px;color:#666">
+        GoBee — Servizio locale con sede a Vicenza
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <div>&copy; <span id="year"></span> GoBee · Il servizio che vola</div>
+    <div style="color:#777;">P.IVA (se presente) · Note legali in arrivo</div>
   </div>
 </footer>
+
+<!-- FAB WhatsApp -->
+<a class="wa-fab" href="https://wa.me/393298889083?text=Ciao%20GoBee!%20Vorrei%20un%20preventivo."
+   target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+
 <script>
-  // Mobile nav
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
-  toggle.addEventListener('click', () => nav.classList.toggle('open'));
-  // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-  <!-- Pulsante WhatsApp GoBee -->
-<a href="https://wa.me/393298889083" 
-   target="_blank" 
-   style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:12px 20px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 4px 6px rgba(0,0,0,0.2);font-family:sans-serif;">
-   💬 Scrivici su WhatsApp
-</a>
+
 </body>
-
 </html>
-

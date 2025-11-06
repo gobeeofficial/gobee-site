@@ -146,6 +146,74 @@ Per consegne oltre questa distanza, offriamo preventivi personalizzati in base a
       <p>Vicenza e zone limitrofe. Se hai dubbi sulla copertura, scrivici: rispondiamo al volo.</p>
     </div>
   </section>
+  <!-- RICHIEDI PREVENTIVO -->
+<section id="preventivo">
+  <div class="container">
+    <h2>Richiedi un preventivo</h2>
+    <p style="margin:8px 0 14px 0">
+      Risposta rapida via email o su WhatsApp. Compila i campi qui sotto 👇
+    </p>
+
+    <form onsubmit="return goBeeQuote()" style="background:#fff;border:1px solid #eee;border-radius:12px;padding:16px;max-width:640px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div>
+          <label>Nome e cognome</label><br>
+          <input id="q_name" type="text" required style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;">
+        </div>
+        <div>
+          <label>Email</label><br>
+          <input id="q_email" type="email" required style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;">
+        </div>
+        <div>
+          <label>Ritiro (indirizzo)</label><br>
+          <input id="q_from" type="text" required style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;">
+        </div>
+        <div>
+          <label>Consegna (indirizzo)</label><br>
+          <input id="q_to" type="text" required style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;">
+        </div>
+      </div>
+
+      <div style="margin-top:12px;">
+        <label>Dettagli / urgenza</label><br>
+        <textarea id="q_notes" rows="4" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;"></textarea>
+      </div>
+
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button type="submit" class="btn">Invia richiesta via email</button>
+        <a class="btn outline"
+           href="https://wa.me/393298889083?text=Ciao%20GoBee!%20Vorrei%20un%20preventivo%20per%20una%20consegna."
+           target="_blank" rel="noopener">Oppure scrivici su WhatsApp</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  // Funzione per generare l'email automatica
+  function goBeeQuote(){
+    var name = encodeURIComponent(document.getElementById('q_name').value || '');
+    var email = encodeURIComponent(document.getElementById('q_email').value || '');
+    var from = encodeURIComponent(document.getElementById('q_from').value || '');
+    var to   = encodeURIComponent(document.getElementById('q_to').value || '');
+    var notes= encodeURIComponent(document.getElementById('q_notes').value || '');
+
+    var subject = 'Richiesta preventivo GoBee';
+    var body =
+      'Nome e cognome: ' + name + '%0D%0A' +
+      'Email: ' + email + '%0D%0A' +
+      'Ritiro: ' + from + '%0D%0A' +
+      'Consegna: ' + to + '%0D%0A' +
+      'Dettagli/Urgenza: ' + notes + '%0D%0A';
+
+    var mailto = 'mailto:gobeeitalia@gmail.com'
+               + '?subject=' + encodeURIComponent(subject)
+               + '&body=' + body;
+
+    window.location.href = mailto;
+    return false; // blocca submit standard
+  }
+</script>
 
   <!-- RIDER -->
   <section id="rider">
@@ -213,5 +281,6 @@ Per consegne oltre questa distanza, offriamo preventivi personalizzati in base a
 
 </body>
 </html>
+
 
 

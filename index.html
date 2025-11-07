@@ -109,7 +109,38 @@ header{box-shadow:0 6px 24px rgba(0,0,0,.08)}
   padding:12px 14px;margin:0 0 10px 0;
   box-shadow:0 8px 20px rgba(0,0,0,.04);
 }
+/* Hero più moderno */
+.hero{
+  background: linear-gradient(180deg,#ffd24c 0%, #ffcc33 70%, #ffe58a 100%);
+  padding:56px 0 64px;
+  border-bottom-left-radius:24px;
+  border-bottom-right-radius:24px;
+}
+.btn{transition:transform .08s ease, box-shadow .2s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.btn.outline:hover{box-shadow:0 8px 20px rgba(0,0,0,.08)}
 
+/* Cards più “app” */
+.container.card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:18px;
+  box-shadow:0 8px 26px rgba(0,0,0,.08);
+  padding:28px;
+}
+@media (max-width:800px){ .container.card{padding:20px} }
+
+/* Liste più leggibili */
+.feature li{
+  background:#f7f7f7;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:12px 14px;
+  margin:10px 0;
+}
+
+/* Ombra all'header quando si scorre */
+header.scrolled{ box-shadow:0 6px 18px rgba(0,0,0,.08) }
   </style>
 </head>
 <body>
@@ -350,6 +381,7 @@ Per consegne oltre questa distanza, offriamo preventivi personalizzati in base a
 
 </body>
 </html>
+
 
 
 

@@ -19,6 +19,32 @@
     a{color:#0066cc;text-decoration:none}
     a:hover{text-decoration:underline}
     .container{max-width:1180px;margin:0 auto;padding:0 20px}
+    /* Logo laterale tondo */
+    .side-logo{
+      position:absolute;
+      top:260px;              /* altezza verticale, possiamo regolarla dopo */
+      left:0;
+      width:180px;
+      height:180px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;    /* così non dà fastidio ai click */
+    }
+    .side-logo img{
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      box-shadow:0 8px 24px rgba(0,0,0,0.25);
+    }
+    .side-logo-left{
+      left:40px;              /* distanza dal bordo sinistro */
+    }
+
+    /* Nascondi il logo sui telefoni (schermi stretti) */
+    @media (max-width:900px){
+      .side-logo{display:none;}
+    }
     header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #eee}
     .top{display:flex;align-items:center;justify-content:space-between;height:64px}
     .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--black)}
@@ -255,6 +281,10 @@ section {
 </header>
 
 <main>
+<!-- Logo laterale GoBee -->
+  <div class="side-logo side-logo-left" aria-hidden="true">
+    <img src="gobee-logo.png" alt="Logo GoBee">
+  </div>
   <!-- HERO -->
   <section class="hero">
     <div class="container">
@@ -473,6 +503,7 @@ Per consegne oltre questa distanza, offriamo preventivi personalizzati in base a
 
 </body>
 </html>
+
 
 
 

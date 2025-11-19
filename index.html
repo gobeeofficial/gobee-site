@@ -11,311 +11,230 @@
 
   <style>
     :root{
-      --yellow:#FFC04A;
-      --yellow-dark:#FFA32F;
-      --black:#111;
-      --text:#333;
+      /* giallo/arancio scelto */
+      --brand:#ffd75a;
+      --brand-dark:#ffb703;
+      --ink:#111;
+      --ink-soft:#555;
+      --bg:#e5e7eb;
       --green:#25D366;
-      --bg:#E5E7EB;
-      --card:#FFFFFF;
-      --border:#E0E0E0;
     }
 
-    *{box-sizing:border-box;}
-
-    html{
-      margin:0;
-      padding:0;
-      scroll-behavior:smooth;
-    }
-
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;}
     body{
-      margin:0;
-      padding:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
+      color:var(--ink);
       background:var(--bg);
     }
+    a{color:#0066cc;text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    a{
-      color:#0066cc;
-      text-decoration:none;
-    }
-    a:hover{text-decoration:underline;}
-
-    .container{
-      max-width:1000px;
-      margin:0 auto;
-      padding:0 20px;
-    }
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
     /* HEADER */
     header{
-      position:sticky;
-      top:0;
-      z-index:10;
+      position:sticky;top:0;z-index:20;
       background:#fff;
-      box-shadow:0 4px 14px rgba(0,0,0,.08);
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
     }
-
     .top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+      display:flex;align-items:center;justify-content:space-between;
       height:64px;
     }
-
     .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-      color:var(--black);
+      display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);
     }
-
     .logo-mark{
-      display:inline-block;
-      width:24px;
-      height:24px;
-      background:var(--yellow);
-      border-radius:6px;
+      display:inline-block;width:24px;height:24px;
+      background:var(--brand);border-radius:6px;
     }
-
     nav a{
-      margin-left:18px;
-      color:var(--black);
-      font-weight:600;
-      font-size:14px;
+      margin-left:18px;color:var(--ink);font-weight:600;font-size:14px;
     }
 
-    /* HERO */
-    .hero{
-      background:linear-gradient(135deg,var(--yellow) 0%,var(--yellow-dark) 100%);
-      border-radius:18px;
-      margin:20px auto 32px auto;
-      box-shadow:0 14px 36px rgba(0,0,0,.12);
-      color:#111;
-    }
-
-    .hero-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
-      padding:32px 20px;
-    }
-
-    .hero-text{
-      flex:1;
-    }
-
-    .hero h1{
-      margin:0 0 12px 0;
-      color:var(--black);
-      font-size:28px;
-      line-height:1.2;
-    }
-
-    .hero p{
-      margin:0 0 18px 0;
-      font-size:16px;
-    }
-
-    .hero-logo{
-      flex:0 0 150px;
-      text-align:center;
-     }
-    
-
-    .hero-logo img{
-    width: 180px;           
-    height: 180px;          
-    border-radius: 50%;    
-    object-fit: cover;      
-    object-position: center;
-    border: 5px solid #fff; 
-    box-shadow: 0 10px 28px rgba(0,0,0,0.25);
-    }
-
-    /* BOTTONI */
+    /* PULSANTI */
     .btn{
       display:inline-block;
-      background:var(--black);
-      color:#fff;
-      padding:12px 18px;
-      border-radius:14px;
-      font-weight:700;
-      font-size:14px;
-      border:none;
-      cursor:pointer;
-      transition:transform .08s ease, box-shadow .2s ease, background .2s ease;
+      background:#000;color:#fff;
+      padding:10px 16px;border-radius:12px;
+      font-weight:700;font-size:14px;
+      transition:transform .08s ease, box-shadow .2s ease, background .2s;
     }
-
     .btn:hover{
       transform:translateY(-1px);
       box-shadow:0 8px 20px rgba(0,0,0,.12);
     }
-
     .btn.outline{
-      background:#fff;
-      color:var(--black);
-      border:2px solid var(--black);
+      background:#fff;color:#000;border:2px solid #000;
     }
-
     .btn.outline:hover{
-      background:var(--yellow);
-      color:#000;
+      background:var(--brand);color:#000;
+    }
+    .btn.cta{
+      animation:pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.03)}
+      100%{transform:scale(1)}
     }
 
-    /* SEZIONI GENERALI */
-    section{
-      background:var(--card);
+    /* HERO */
+    .hero-wrap{
+      margin:20px auto 32px auto;
+      max-width:1100px;
+    }
+    .hero{
+      background:linear-gradient(135deg,var(--brand) 0%,var(--brand-dark) 100%);
+      border-radius:18px;
+      box-shadow:0 14px 36px rgba(0,0,0,.12);
+      padding:26px 24px;
+    }
+    .hero-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:18px;
+    }
+    .hero-text{
+      flex:1;
+    }
+    .hero h1{
+      color:#111;
+      font-size:26px;
+      line-height:1.2;
+      margin-bottom:8px;
+    }
+    .hero p{
+      font-size:16px;
+      margin-bottom:14px;
+    }
+    .hero-actions{
+      display:flex;flex-wrap:wrap;gap:10px;
+    }
+
+    .hero-media{
+      flex:0 0 180px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+    }
+    .hero-logo{
+      width:110px;height:110px;
+      border-radius:50%;
+      object-fit:cover;
+      box-shadow:0 8px 22px rgba(0,0,0,.25);
+      border:3px solid #fff;
+    }
+    .hero-moto{
+      width:150px;
+      max-width:100%;
+      display:block;
+      filter:drop-shadow(0 6px 16px rgba(0,0,0,.3));
+    }
+
+    /* SEZIONI CARD */
+    section.card-section{
+      background:#fff;
       border-radius:16px;
-      border:1px solid var(--border);
+      border:1px solid #e0e0e0;
       box-shadow:0 8px 24px rgba(0,0,0,0.08);
-      padding:32px 24px;
-      margin:28px auto;
-      max-width:1000px;
+      padding:32px 26px;
+      margin:24px auto;
+      max-width:1100px;
+    }
+    section.card-section h2{
+      margin-bottom:16px;
+      color:var(--ink);
+      font-size:20px;
     }
 
-    h2{
-      margin:0 0 16px 0;
-      color:var(--black);
-    }
-
-    /* GRID 2 COLONNE */
-    .grid-2{
+    .grid{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:24px;
     }
-
-    @media (max-width:800px){
-      .grid-2{
-        grid-template-columns:1fr;
-      }
-      .hero-inner{
-        flex-direction:column-reverse;
-        text-align:center;
-      }
-      .hero-text{
-        text-align:center;
-      }
-      nav{
-        display:none;
-      }
+    @media(max-width:800px){
+      .hero-inner{flex-direction:column;}
+      .hero-media{order:-1;}
+      section.card-section{padding:24px 18px;margin:18px auto;}
+      .grid{grid-template-columns:1fr;}
     }
 
-    /* LISTA FEATURE */
-    .feature{
+    /* LISTE FEATURE */
+    ul.feature{
       list-style:none;
-      padding:0;
+      padding-left:0;
       margin:0;
     }
-
-    .feature li{
+    ul.feature li{
       background:#f7f7f7;
-      border:1px solid #e0e0e0;
+      border:1px solid #e7e7e7;
       border-radius:12px;
       padding:10px 12px;
       margin:8px 0;
+      box-shadow:0 4px 14px rgba(0,0,0,.06);
       font-size:14px;
     }
 
-    /* FORM PREVENTIVO */
-    .form-card{
-      background:#fff;
-      border:1px solid #eee;
-      border-radius:12px;
-      padding:16px;
-      max-width:640px;
+    /* SERVIZI + PACCO */
+    .section-header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      margin-bottom:8px;
     }
-
-    .form-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    .form-grid label{
-      font-size:13px;
-      font-weight:600;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea{
-      width:100%;
-      padding:10px;
-      border:1px solid #ddd;
-      border-radius:8px;
-      font-family:inherit;
-      font-size:14px;
-    }
-
-    textarea{resize:vertical;}
-
-    @media (max-width:700px){
-      .form-grid{
-        grid-template-columns:1fr;
-      }
+    .section-header img{
+      width:70px;height:70px;border-radius:12px;object-fit:cover;
+      box-shadow:0 4px 16px rgba(0,0,0,.18);
     }
 
     /* MAPPA */
-    .map-wrapper{
-      max-width:100%;
-      height:0;
-      padding-bottom:56%;
-      position:relative;
-      border:1px solid #eee;
-      border-radius:8px;
-      overflow:hidden;
-      margin-top:12px;
+    .map-wrap{
+      max-width:100%;height:0;padding-bottom:56%;
+      position:relative;border:1px solid #eee;border-radius:10px;overflow:hidden;
+      margin:14px 0;
+    }
+    .map-wrap iframe{
+      position:absolute;top:0;left:0;width:100%;height:100%;border:0;
     }
 
-    .map-wrapper iframe{
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      border:0;
+    /* FORM PREVENTIVO */
+    form.quote{
+      background:#fff;border:1px solid #eee;border-radius:12px;
+      padding:16px;max-width:640px;
     }
-
-    /* WHATSAPP FLOTANTE */
-    .wa-fab{
-      position:fixed;
-      right:20px;
-      bottom:20px;
-      background:var(--green);
-      color:#fff;
-      padding:12px 18px;
-      border-radius:50px;
-      font-weight:800;
-      box-shadow:0 4px 6px rgba(0,0,0,.18);
+    form.quote label{font-size:14px}
+    form.quote input,form.quote textarea{
+      width:100%;padding:8px 10px;
+      border-radius:8px;border:1px solid #ddd;
       font-size:14px;
-      z-index:50;
     }
-
-    .wa-fab:hover{
-      text-decoration:none;
-      box-shadow:0 6px 14px rgba(0,0,0,.28);
+    form.quote textarea{resize:vertical;}
+    .quote-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;
+    }
+    @media(max-width:700px){
+      .quote-grid{grid-template-columns:1fr;}
     }
 
     /* FOOTER */
     footer{
-      background:#111;
-      color:#EEE;
-      padding:18px 0;
-      font-size:14px;
+      background:#111;color:#eee;
+      padding:20px 0;
+      font-size:13px;
+    }
+    footer .foot-inner{
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     }
 
-    footer .container{
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-      align-items:center;
+    /* FAB WHATSAPP */
+    .wa-fab{
+      position:fixed;right:20px;bottom:20px;
+      background:var(--green);color:#fff;
+      padding:12px 16px;border-radius:999px;
+      font-weight:800;font-size:14px;
+      box-shadow:0 4px 12px rgba(0,0,0,.18);
+      z-index:30;
     }
   </style>
 </head>
@@ -341,50 +260,56 @@
 <main>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-text">
-        <h1>Consegne e commissioni rapide per aziende e privati</h1>
-        <p>Servizio locale, tracciabile e su misura. Prenota via WhatsApp in pochi secondi.</p>
-        <div>
-          <a class="btn" href="https://wa.me/393298889083?text=Ciao%20GoBee!%20Vorrei%20un%20preventivo%20per%20una%20consegna.">Scrivici su WhatsApp</a>
-          <a class="btn outline" href="#servizi" style="margin-left:10px;">Vedi prezzi</a>
+  <div class="hero-wrap">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Consegne e commissioni rapide per aziende e privati</h1>
+          <p>Servizio locale, tracciabile e su misura. Prenota via WhatsApp in pochi secondi.</p>
+          <div class="hero-actions">
+            <a class="btn cta" href="https://wa.me/393298889083?text=Ciao%20GoBee!%20Vorrei%20un%20preventivo%20per%20una%20consegna.">
+              Scrivici su WhatsApp
+            </a>
+            <a class="btn outline" href="#servizi">Vedi prezzi</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="logo_gobee.jpg" alt="Logo GoBee" class="hero-logo">
+          <img src="moto_gobee.jpg" alt="Rider GoBee in moto" class="hero-moto">
         </div>
       </div>
-      <div class="hero-logo">
-        <img src="logo_gobee.jpg" alt="Logo GoBee">
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <!-- COME FUNZIONA -->
-  <section id="come-funziona">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <h2>Come funziona</h2>
-          <ul class="feature">
-            <li>Ci scrivi su WhatsApp con ritiro, destinazione e orario.</li>
-            <li>Ti diamo conferma e prezzo immediato.</li>
-            <li>Ritiro, consegna e conferma al termine.</li>
-          </ul>
-        </div>
-        <div>
-          <h2>Per cosa ci chiamano</h2>
-          <ul class="feature">
-            <li>Documenti, chiavi, pacchi leggeri.</li>
-            <li>Commissioni per aziende, uffici e farmacie.</li>
-            <li>Servizi a tempo (fino a 90 minuti).</li>
-          </ul>
-        </div>
+  <section id="come-funziona" class="card-section">
+    <div class="container grid">
+      <div>
+        <h2>Come funziona</h2>
+        <ul class="feature">
+          <li>Ci scrivi su WhatsApp con ritiro, destinazione e orario.</li>
+          <li>Ti diamo conferma e prezzo immediato.</li>
+          <li>Ritiro, consegna e conferma al termine.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Per cosa ci chiamano</h2>
+        <ul class="feature">
+          <li>Documenti, chiavi, pacchi leggeri.</li>
+          <li>Commissioni per aziende, uffici e farmacie.</li>
+          <li>Servizi a tempo (fino a 90 minuti).</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- SERVIZI E PREZZI -->
-  <section id="servizi">
+  <section id="servizi" class="card-section">
     <div class="container">
-      <h2>Servizi e prezzi</h2>
+      <div class="section-header">
+        <h2>Servizi e prezzi</h2>
+        <img src="pacco-gobee.jpg" alt="Consegna pacchi GoBee">
+      </div>
       <ul class="feature">
         <li>Consegna rapida (entro 3 km): <strong>10 €</strong></li>
         <li>Fino a 6 km: <strong>14 €</strong> — Fino a 9 km: <strong>18 €</strong></li>
@@ -398,16 +323,17 @@
   </section>
 
   <!-- AREA DI COPERTURA -->
-  <section id="area">
+  <section id="area" class="card-section">
     <div class="container">
       <h2>Area di copertura</h2>
-      <p>
-        GoBee effettua consegne rapide in tutta Vicenza e nei comuni entro un raggio di circa 9 km dal centro città.<br>
-        Copriamo le principali zone come Centro Storico, San Felice, San Lazzaro, San Pio X, Ferrovieri, Stanga, Bertesina, Ponte Alto, Sant’Agostino, Maddalene, Laghetto, e parte di Creazzo, Altavilla Vicentina, Torri di Quartesolo e Cavazzale.<br>
-        Per consegne oltre questa distanza, offriamo preventivi personalizzati in base al chilometraggio.
+      <p style="margin-bottom:10px;">
+        GoBee effettua consegne rapide in tutta Vicenza e nei comuni entro un raggio di circa 9 km dal centro città.
+        Copriamo le principali zone come Centro Storico, San Felice, San Lazzaro, San Pio X, Ferrovieri, Stanga,
+        Bertesina, Ponte Alto, Sant’Agostino, Maddalene, Laghetto, e parte di Creazzo, Altavilla Vicentina,
+        Torri di Quartesolo e Cavazzale.
       </p>
 
-      <div class="map-wrapper">
+      <div class="map-wrap">
         <iframe
           src="https://www.google.com/maps?q=Vicenza&output=embed"
           loading="lazy"
@@ -415,7 +341,7 @@
         </iframe>
       </div>
 
-      <ul class="feature" style="margin-top:16px;">
+      <ul class="feature" style="margin-top:10px;">
         <li>Centro storico, San Felice, San Lazzaro</li>
         <li>Zona Ovest, Zona Est, Stanga</li>
         <li>San Pio X, Ferrovieri, Ponte Alto</li>
@@ -424,15 +350,15 @@
   </section>
 
   <!-- RICHIEDI PREVENTIVO -->
-  <section id="preventivo">
+  <section id="preventivo" class="card-section">
     <div class="container">
       <h2>Richiedi un preventivo</h2>
       <p style="margin:8px 0 14px 0">
         Risposta rapida via email o su WhatsApp. Compila i campi qui sotto 👇
       </p>
 
-      <form onsubmit="return goBeeQuote()" class="form-card">
-        <div class="form-grid">
+      <form class="quote" onsubmit="return goBeeQuote()">
+        <div class="quote-grid">
           <div>
             <label>Nome e cognome</label><br>
             <input id="q_name" type="text" required>
@@ -460,42 +386,40 @@
           <button type="submit" class="btn">Invia richiesta via email</button>
           <a class="btn outline"
              href="https://wa.me/393298889083?text=Ciao%20GoBee!%20Vorrei%20un%20preventivo%20per%20una%20consegna."
-             target="_blank"
-             rel="noopener">Oppure scrivici su WhatsApp</a>
+             target="_blank" rel="noopener">
+            Oppure scrivici su WhatsApp
+          </a>
         </div>
       </form>
     </div>
   </section>
 
   <!-- RIDER -->
-  <section id="rider">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <h2>Diventa Rider</h2>
-          <ul class="feature">
-            <li>Guadagni equi per consegna.</li>
-            <li>Orari liberi, zero vincoli.</li>
-            <li>Ordini premium per i “Rider di fiducia”.</li>
-          </ul>
-          <p>
-            <a class="btn outline" href="mailto:gobeeitalia@gmail.com?subject=Candidatura%20Rider">Candidati</a>
-          </p>
-        </div>
-        <div>
-          <h2>Perché GoBee</h2>
-          <p>
-            Servizio personalizzato, contatto diretto e recensioni dei clienti
-            per i rider più affidabili. Pensato da chi ha già lavorato come rider
-            e conosce bene esigenze, tempi e difficoltà sul campo.
-          </p>
-        </div>
+  <section id="rider" class="card-section">
+    <div class="container grid">
+      <div>
+        <h2>Diventa Rider</h2>
+        <ul class="feature">
+          <li>Guadagni equi per consegna.</li>
+          <li>Orari liberi, zero vincoli.</li>
+          <li>Ordini premium per i “Rider di fiducia”.</li>
+        </ul>
+        <p style="margin-top:8px;">
+          <a class="btn outline" href="mailto:gobeeitalia@gmail.com?subject=Candidatura%20Rider">Candidati</a>
+        </p>
+      </div>
+      <div>
+        <h2>Perché GoBee</h2>
+        <p>
+          Servizio personalizzato, contatto diretto e possibilità di ricevere recensioni dai clienti:
+          i rider più affidabili avranno più richieste e più continuità di lavoro.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- CONTATTI -->
-  <section id="contatti">
+  <section id="contatti" class="card-section">
     <div class="container">
       <h2>Contatti</h2>
 
@@ -524,20 +448,22 @@
 </main>
 
 <footer>
-  <div class="container">
+  <div class="container foot-inner">
     <div>&copy; <span id="year"></span> GoBee · Il servizio che vola</div>
-    <div style="color:#ccc;">P.IVA (se presente) · Note legali in arrivo</div>
+    <div style="color:#bbb;">P.IVA (se presente) · Note legali in arrivo</div>
   </div>
 </footer>
 
 <!-- FAB WhatsApp -->
 <a class="wa-fab" href="https://wa.me/393298889083?text=Ciao%20GoBee!%20Vorrei%20un%20preventivo."
-   target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+   target="_blank" rel="noopener">
+  Scrivici su WhatsApp
+</a>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Funzione per generare l'email automatica dal form
+  // Funzione per generare l'email automatica
   function goBeeQuote(){
     var name = encodeURIComponent(document.getElementById('q_name').value || '');
     var email = encodeURIComponent(document.getElementById('q_email').value || '');
@@ -564,19 +490,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
